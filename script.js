@@ -74,9 +74,6 @@ function isEqual(){
         tempB="";
         negative=false;
         point=false;
-        if(result= isNaN){ 
-            soluDisplay.textContent = 'Math Error';
-        }
     }
     calculate=false;
 }
