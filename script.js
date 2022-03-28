@@ -37,6 +37,7 @@ function clearDisplay(){
     tempB="";
     calculate=false
     result="";
+    number= false;
 };
 
 function writeNegative(){
@@ -76,6 +77,7 @@ function isEqual(){
         point=false;
     }
     calculate=false;
+    number= false;
 }
 
 // Number function
