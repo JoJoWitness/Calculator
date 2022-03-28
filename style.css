@@ -1,0 +1,181 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 95vh;
+    background-color: #efefef;
+}
+
+#calculatorOuterBody{
+    display: flex;
+    flex-flow: column wrap;
+    flex: 0 0 auto;
+    align-items: center;
+    align-self: center;
+    justify-content: flex-start;
+    border: 2px solid #9AA1AC;
+    border-radius: 45px;
+    background-color: #D2D5DA;
+    width: 410px;
+    height: 620px;
+    box-shadow: 1px 2px 6px #252545
+}
+#display{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    border: 1px solid #9AA1AC;
+    border-radius: 20px;
+    background-color: #DDEEF8;
+    width: 365px;
+    height: 160px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    align-self: center;
+    font-family:Helvetica;
+    color: #202020;
+    box-shadow: 1px 2px 6px #778892;
+}
+
+#solutionDisplay{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height:35px;
+    width: 360px;
+    font-size: 25px;
+    margin-top: 8px;
+    margin-bottom: -6px;
+
+}
+
+#operationDisplay{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height:70px;
+    width: 360px;
+    font-size: 42px;
+
+}
+
+#extraButtons{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+#lowerContainer{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    width: 400px;
+    margin-top: 10px;
+}
+
+#numberButtons{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px;
+    grid-auto-rows: repeat(4, auto);
+    width: 207px;
+    height: 190px;
+    margin-top: -10px;
+  }
+
+#operationButtons{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 8px;
+    grid-auto-rows: repeat(4, auto);
+    margin-left: 12px;
+    width: 136px;
+    height: 190px;
+    margin-top:-10px ;
+}
+
+#equal{
+    height: auto;
+    grid-row-start: 3;
+    grid-row-end: 5;
+    justify-self: stretch;
+    grid-column: 2;
+}
+
+
+#delete,
+#clear{
+    background-color: #FFA947;
+}
+
+#delete:active,
+#clear:active{
+    background-color: #FF961F;
+}
+.buttonStyle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 52px;
+    height: 45px;
+    border-radius: 45px;
+    background-color: #ABB0B7;
+    text-align: center;
+    color: #efefef;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 1px 2px 6px #252545;
+}
+
+.buttonStyleNum{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    border-radius: 15px;
+    background-color: #DDDFE3;
+    border: 1px solid #BCC1C8;
+    margin-top: 25px;
+    text-align: center;
+    color: #202020;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    box-shadow: 1px 1px 6px #252545;
+}
+
+footer{
+    display: flex;
+    align-items: flex-end;
+    min-height: 5vh;
+    margin-top: 35px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.buttonStyle:hover,
+.buttonStyleNum:hover{
+    scale: 1.05;
+    transition: 0.09;
+}
+
+.buttonStyle:active{
+    background-color: #899095;
+}
+
+.buttonStyleNum:active{
+    background-color: #CCCED9;
+}
+
+#display:active{
+    background-color: #DDFCDF;
+}
+
+button{
+ border: 0px;
+}
+{border: 1px solid red}
