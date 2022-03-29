@@ -17,10 +17,12 @@ let negative =false;
 let point= false;
 let calculate= false;
 let opType="";
-let tempA =0, tempB="";
+let tempA =0, tempB=NaN;
 let number= false;
 let symboltoUse=""
 let numDisplay ="";
+let result=NaN;
+let error = false;
 
 // utility functions
 function deleteNum(){
@@ -34,10 +36,11 @@ function clearDisplay(){
     numDisplay="";
     resultDisplay="";
     tempA=0;
-    tempB="";
+    tempB=NaN;
     calculate=false
     result="";
     number= false;
+    error = false;
 };
 
 function writeNegative(){
@@ -62,6 +65,7 @@ function writePoint(){
 }
 
 function isEqual(){
+if(error===false){
     if(calculate===false){
         soluDisplay.textContent = tempA;
     }
@@ -72,17 +76,18 @@ function isEqual(){
         soluDisplay.textContent = `${result}`;
         opDisplay.textContent= "";
         numDisplay="";
-        tempB="";
+        tempB=NaN;
         negative=false;
         point=false;
     }
     calculate=false;
     number= false;
-}
+}}
 
 // Number function
 
 function writeNumber(numero){
+if(error===false){
     if(numDisplay.length<15){
         numDisplay += numero;
         opDisplay.textContent= `${numDisplay}`;
@@ -94,32 +99,33 @@ function writeNumber(numero){
             }
         number = true;
     }}
+}
 
 function writeOperation(simbolo){
+if(error===false){    
     if(number === true){
         symboltoUse= simbolo;
         opDisplay.textContent= "";
         numDisplay="";
         soluDisplay.textContent = `${result}${symboltoUse}`
-        if(calculate===true){
+        if(!isNaN(tempB)){
             tempA = result;
             isEqual();
             soluDisplay.textContent += `${symboltoUse}`
         }
-        calculate = true;
-        negative= false;
-    }
-
-}
+       
+        negative= false;  
+    }}}
 
 function writeSpecialOp(e){
     if(number === true){
         esSymbolToUse= e.target.textContent;
-        result = operationCalcEs();
+        result = operationCalcEs(); calculate = true;
         console.log(result);
         soluDisplay.textContent=`${result}`;
             if(isNaN(result)){
                 soluDisplay.textContent= 'Math Error';
+                error = true;
             }
         opDisplay.textContent="";
         numDisplay="";
@@ -159,7 +165,9 @@ function operationCalcEs(){
 
 function opPercentage(){
     numDisplay = numDisplay/100;
+    if(numDisplay.toString().length<15){
     opDisplay.textContent= `${numDisplay}`;
+}
 }
 
 function plus(tempA, tempB){
