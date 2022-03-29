@@ -113,7 +113,7 @@ if(error===false){
             isEqual();
             soluDisplay.textContent += `${symboltoUse}`
         }
-       
+       calculate=true;
         negative= false;  
     }}}
 
